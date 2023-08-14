@@ -54,10 +54,10 @@ function Recipe_home() {
                            
                             <div class="rounded-xl w-full md:w-56  px-3 pt-3 pb-3  border border-base-300 flex flex-row md:flex-col" >
                                 <img class="w-1/3 md:w-full rounded-xl " src={item.image} />
-                                <div className="w-full h-full  flex flex-col ml-2 md:ml-0">
-                                    <div class="mt-3   font-bold text-sm md:text-base">{item.title}</div>
-                                    <div className='my-3 text-xs md:text-base'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, sed?</div>
-                                    <button class=" btn btn-xs md:btn-sm mt-auto w-36 sm:w-full text-xs md:text-sm  btn-secondary rounded-lg text-white">See Full Details</button>              
+                                <div className="w-full h-full    flex flex-col ml-2 md:ml-0">
+                                    <div class="mt-0  lg:mt-3  font-bold text-sm md:text-base">{item.title}</div>
+                                    <div className='my-3 text-xs md:text-base hidden lg:block'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, sed?</div>
+                                    <button class="mt-auto mb-auto md:mb-0 btn btn-xs md:btn-sm  w-36 sm:w-full text-xs md:text-sm  btn-secondary rounded-lg text-white">See Full Details</button>              
                                 </div>  
                             </div>
                         </Link>
