@@ -29,7 +29,7 @@ function Cuisines() {
 
         }
         else {
-            axios.get(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${name}&number=8&apiKey=${import.meta.env.VITE_API_KEY_RECIPE}`)
+            axios.get(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${name}&number=9&apiKey=${import.meta.env.VITE_API_KEY_RECIPE}`)
                 .then(function (response) {
                     localStorage.setItem('cuisines', JSON.stringify(response.data.results));
 
@@ -84,17 +84,18 @@ function Cuisines() {
                         </div>
                     </div>
                 ) : (
-                    <div className='flex flex-wrap justify-center  gap-3 mx-0 xl:mx-60 p-5 '>
+                    <div className='flex flex-wrap justify-center  gap-4 mx-0 xl:mx-60 p-5 '>
                         {
                             cuisinces.map((item) => (
-                                <Link to={`/recipe/${item.id}`} key={item.id} className='flex hover:-translate-y-1 hover:duration-300 hover:shadow-md rounded-xl delay-75  hover:bg-secondary hover:text-white'>
-                                    <div
-                                        className="rounded-xl w-full md:w-56  px-3 pt-3 pb-3  border border-base-300 flex flex-row md:flex-col"
-
-                                    >
-                                        <img class="w-1/3 md:w-full rounded-xl" src={item.image} />
-                                        <div className="w-full h-full  flex flex-col ml-2 md:ml-0 items-center justify-center ">
-                                            <div class="mt-0 lg:mt-3 font-bold break-all text-sm md:text-base">{item.title}</div>
+                                <Link to={`/recipe/${item.id}`} key={item.id} className='flex hover:-translate-y-2 hover:duration-500 hover:shadow-md rounded-xl delay-75  hover:bg-secondary hover:text-white'>
+                                    <div class="flex items-center justify-center">
+                                        <div class="relative h-[14rem]  xl:h-80 xl:w-[18rem] rounded-lg">
+                                            <img src={item.image} class="object-cover w-full h-full rounded-lg" />
+                                            <div class="absolute w-full h-full bottom-0 bg-gradient-to-b from-black/10 from-50% to-black/100 rounded-lg flex flex-col items-center justify-end text-start">
+                                                <p class="text-center text-lg my-4  px-14 text-gray-300 ">
+                                                    {item.title}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>

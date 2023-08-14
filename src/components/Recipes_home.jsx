@@ -37,10 +37,10 @@ function Recipe_home() {
 
     return (
         <div className=' mt-10 lg:mt-24'>
-            <p className='text-2xl lg:text-5xl text-center font-medium'>Popular Recipes You can't Miss</p>
+            <p className='text-2xl lg:text-5xl text-center font-medium font-serif'>Popular Recipes You can't Miss</p>
             <p className='text-center mt-6 mx-5'>From comfort food classics to exotic flavors , our featured
                 recipes are sure to impress</p>
-            <div className='flex flex-wrap justify-center  gap-5 mt-5 p-3'>
+            <div className='flex flex-wrap justify-center  gap-4 mt-5 p-3'>
                 {error ? (
                     <div className='flex  justify-center p-5 '>
                         <div className="alert alert-error w-fit">
@@ -50,16 +50,18 @@ function Recipe_home() {
                     </div>
                 ) : (
                     recipe.slice(0, 4).map((item) => (
-                        <Link to={`/recipe/${item.id}`} className='flex hover:-translate-y-1 hover:duration-300 hover:shadow-md rounded-xl delay-75' key={item.id}>
+                        <Link to={`/recipe/${item.id}`} className='flex hover:-translate-y-2 hover:duration-500 hover:shadow-md rounded-xl delay-75' key={item.id}>
                            
-                            <div class="rounded-xl w-full md:w-56  px-3 pt-3 pb-3  border border-base-300 flex flex-row md:flex-col" >
-                                <img class="w-1/3 md:w-full rounded-xl " src={item.image} />
-                                <div className="w-full h-full    flex flex-col ml-2 md:ml-0">
-                                    <div class="mt-0  lg:mt-3  font-bold text-sm md:text-base">{item.title}</div>
-                                    <div className='my-3 text-xs md:text-base hidden lg:block'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, sed?</div>
-                                    <button class="mt-auto mb-auto md:mb-0 btn btn-xs md:btn-sm  w-36 sm:w-full text-xs md:text-sm  btn-secondary rounded-lg text-white">See Full Details</button>              
-                                </div>  
-                            </div>
+                           <div class="flex items-center justify-center">
+                                        <div class="relative h-[14rem]  xl:h-80 xl:w-[18rem] rounded-lg">
+                                            <img src={item.image} class="object-cover w-full h-full rounded-lg" />
+                                            <div class="absolute w-full h-full bottom-0 bg-gradient-to-b from-black/10 from-50% to-black/100 rounded-lg flex flex-col items-center justify-end text-start">
+                                                <p class="text-center text-lg my-4  px-14 text-gray-300 ">
+                                                    {item.title}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
                         </Link>
                     ))
                 )}

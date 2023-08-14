@@ -10,7 +10,7 @@ function Search() {
     function Search_submit(e) {
         e.preventDefault();
         navigate(`/search/${input}`);
-        setinput('')
+        
 
     }
 
@@ -21,7 +21,7 @@ function Search() {
                 <input
                     type='text'
                     className=' input w-full bg-base-100 pl-10 pr-3'
-                    placeholder=' Search only " thai "'
+                    placeholder=' Search...'
                     value={input}
                     onChange={(e) => setinput(e.target.value)}
                 />

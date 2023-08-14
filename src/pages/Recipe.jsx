@@ -71,7 +71,7 @@ function Recipe() {
     }
 
     return (
-        <div>
+        <div >
             {error ? (<div className='flex  justify-center p-5 '>
                 <div className="alert alert-error w-80">
                     <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -84,8 +84,8 @@ function Recipe() {
                     transition={{ duration: 1 }}>
                     {/* grid 1 */}
                     <div>
-                        <p className=' text-6xl font-black p-5 md:px-10 text-center lg:text-start   text-secondary'>{detail.title}</p>
-                        <div className='md:px-10 flex justify-center xl:justify-start  text-center lg:text-start'>
+                        <p className=' font-serif text-6xl font-black p-5 md:px-10 text-center lg:text-start   text-secondary'>{detail.title}</p>
+                        <div className='md:px-10 flex flex-wrap justify-center xl:justify-start  text-center lg:text-start'>
                             {detail?.dishTypes?.map((type) => (
                                 <div key={type} className=" badge-sm md:badge-lg badge badge-secondary badge-outline m-1">{type}</div>
                             ))}
@@ -141,9 +141,9 @@ function Recipe() {
                     </div>
 
                     {/* grid 2 */}
-                    <div className='flex-col  flex  justify-center items-center   overflow-hidden m-5'>
-                        <img className='order-2 xl:order-1 w-2/3 lg:w-full  rounded-2xl shadow-xl' src={detail.image} alt={detail.title} />
-                        <div className="order-1 lg:order-2 grid grid-cols-2 md:grid-cols-4 gap-3 m-3">
+                    <div className='flex-col   flex  items-center   overflow-hidden m-5'>
+                        <img className='order-2 xl:order-1 w-2/3 lg:w-full  rounded-2xl shadow-lg' src={detail.image} alt={detail.title} />
+                        <div className="order-1 lg:order-2 grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 m-3">
 
                             <div className=" grid grid-rows-2 grid-flow-col gap-x-2 border-2  rounded-xl items-center p-2 bg-base">
 

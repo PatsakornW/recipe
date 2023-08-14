@@ -6,31 +6,17 @@ import Theme from './Theme'
 import '../App.css'
 
 function Navbar() {
+      function removeAllLocal() {
+        localStorage.removeItem('search');
+        localStorage.removeItem('recipe_home');
+        localStorage.removeItem('cuisines');
+        localStorage.removeItem('detail_recipes');
+        localStorage.removeItem('detail_nutri');
+        localStorage.removeItem('cuisines');
+        localStorage.removeItem('allRecipe');
+
+    }
   return (
-
-
-
-    // <div className="navbar bg-base-200">
-    //     <div>
-    //         <Link to={'/'}>
-    //             <p className="btn btn-ghost normal-case text-xl">Recipe</p>
-    //         </Link>
-    //     </div>
-    //     <div className="flex justify-start">
-    //         <p>Random</p>
-    //         <div className="dropdown">
-    //             <label tabIndex={0} className="btn m-1">Click</label>
-    //             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-    //                 <li><a>Item 1</a></li>
-    //                 <li><a>Item 2</a></li>
-    //             </ul>
-    //         </div>
-    //     </div>
-    //     <div className='bg-red-500 w-full flex justify-end'>
-    //         <Search />
-    //     </div>
-    // </div>
-
     <div className="drawer ">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
@@ -82,6 +68,8 @@ function Navbar() {
           <div className="flex-none hidden md:block">
             <Search />
           </div>
+
+      
           <div className="flex-grow md:flex-none justify-end ">
             <Theme />
           </div>
@@ -94,7 +82,7 @@ function Navbar() {
         <ul className="menu p-4 w-80 h-full bg-base-200">
           <Search />
 
-           <li className='mt-4 mb-2'><Link to={'/allrecipe'}>Recipes</Link></li>
+          <li className='mt-4 mb-2'><Link to={'/allrecipe'}>Recipes</Link></li>
           <li>
             <details open>
               <summary>Cuisines</summary>

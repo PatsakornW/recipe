@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-secondary{
+
+    background-color: #ff7300 !important;
+  }
+  
+  .text-secondary {
+    color: #ff7300;
+  }
+
+  .badge-outline.badge-secondary {
+   
+    color:#ff7300;
+}
+
+.btn-secondary {
+    background-color: #ff7300;
+    border-color: #ff7300;
+}
