@@ -38,7 +38,7 @@ function Recipe_home() {
     return (
         <div className=' mt-10 lg:mt-24'>
             <p className='text-2xl lg:text-5xl text-center font-medium'>Popular Recipes You can't Miss</p>
-            <p className='text-center mt-6'>From comfort food classics to exotic flavors , our featured
+            <p className='text-center mt-6 mx-5'>From comfort food classics to exotic flavors , our featured
                 recipes are sure to impress</p>
             <div className='flex flex-wrap justify-center  gap-5 mt-5 p-3'>
                 {error ? (
