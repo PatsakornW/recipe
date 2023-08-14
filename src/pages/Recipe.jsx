@@ -93,19 +93,14 @@ function Recipe() {
                         <div className='flex flex-col items-center xl:items-start px-5 sm:px-10 p-5'>
                             <div className="tabs ">
                                 <a className={activeTab === 'summary' ? 'tab tab-bordered tab-active' : 'tab tab-bordered'} onClick={() => setactiveTab("summary")}>Summary</a>
-                                <a className={activeTab === 'instructions' ? 'tab tab-bordered tab-active ' : 'tab tab-bordered'} onClick={() => setactiveTab("instructions")}>Instructions</a>
                                 <a className={activeTab === 'ingredients' ? 'tab tab-bordered tab-active' : 'tab tab-bordered'} onClick={() => setactiveTab("ingredients")}>Ingredients</a>
+                                <a className={activeTab === 'how to' ? 'tab tab-bordered tab-active' : 'tab tab-bordered'} onClick={() => setactiveTab("how to")}>How to</a>
                             </div>
                             <div className='mt-4'>
                                 {activeTab === 'summary' && (
                                     <div>
                                         <p className="text-sm text-justify" dangerouslySetInnerHTML={{ __html: detail.summary }}></p>
                                     </div>
-
-
-                                )}
-                                {activeTab === 'instructions' && (
-                                    <p className="text-sm text-justify" dangerouslySetInnerHTML={{ __html: detail.instructions }}></p>
                                 )}
                                 {activeTab === 'ingredients' && (
                                     <div>
@@ -121,9 +116,28 @@ function Recipe() {
                                     </div>
 
                                 )}
+                                {activeTab === 'how to' && (
+                                    <div>
+                                        {detail?.analyzedInstructions?.map((item) =>
+                                        (
+                                                <div class="relative ">
+                                                    <div class="absolute h-full border  border-opacity-20 border-secondary"></div>
+                                                    {item.steps.map((step) => (
+                                                        <div class="flex items-center w-full my-3 -ml-1.5">
+                                                            <div class="w-1/12 z-10">
+                                                                <div class="w-3.5 h-3.5 bg-secondary rounded-full"></div>
+                                                            </div>
+                                                            <div class="w-11/12">
+                                                                <p class="text-sm">{step.step}</p>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </div>
-
                     </div>
 
                     {/* grid 2 */}

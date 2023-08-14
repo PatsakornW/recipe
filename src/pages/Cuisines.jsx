@@ -47,15 +47,15 @@ function Cuisines() {
 
     return (
         <motion.div
-            className='mt-0 lg:mt-10'
+            
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}>
             <div className='grid grid-cols-2 cursor-default'>
-                <div className='flex justify-center md:justify-end  items-center col-span-2 md:col-span-1 mt-10 lg:mt-0 ms-0 lg:ms-10'>
+                <div className='flex justify-center md:justify-end  items-center col-span-2 md:col-span-1 mt-5 lg:mt-0  '>
                     <div
                         className=' text-4xl leading-tight text-center md:text-start lg:text-6xl'>
-                        <div className='font-serif mt-0  lg:mt-10 '>
+                        <div className='font-serif '>
                             <p >CUISINES</p>
                             {name === 'Thai' ? (<p className=' bg-gradient-to-r from-red-500  via-blue-400  to-slate-100  text-transparent bg-clip-text'>{name.toUpperCase()}</p>) : ('')}
                             {name === 'American' ? (<p className=' bg-gradient-to-r from-blue-600  via-red-500  to-slate-400  text-transparent bg-clip-text'>{name.toUpperCase()}</p>) : ('')}
@@ -66,14 +66,11 @@ function Cuisines() {
                     </div>
                 </div>
 
-                <div className='flex justify-start ms-10'>
-                    {name === 'Thai' ? (<img className='w-1/2 hidden md:block' src={food_th} alt="Thai" />) : ('')}
-                    {name === 'American' ? (<img className='w-1/2 hidden md:block' src={food_us} alt="American" />) : ('')}
-                    {name === 'Japanese' ? (<img className='w-1/2 hidden md:block' src={food_jp} alt="Japanese" />) : ('')}
-                    {name === 'Mexican' ? (<img className='w-1/2 hidden md:block' src={food_mx} alt="Mexican" />) : ('')}
-
-
-
+                <div className='flex justify-start ms-5'>
+                    {name === 'Thai' ? (<img className='w-2/5 hidden md:block' src={food_th} alt="Thai" />) : ('')}
+                    {name === 'American' ? (<img className='w-2/5 hidden md:block' src={food_us} alt="American" />) : ('')}
+                    {name === 'Japanese' ? (<img className='w-2/5 hidden md:block' src={food_jp} alt="Japanese" />) : ('')}
+                    {name === 'Mexican' ? (<img className='w-2/5 hidden md:block' src={food_mx} alt="Mexican" />) : ('')}
                 </div>
             </div>
 
@@ -87,7 +84,7 @@ function Cuisines() {
                         </div>
                     </div>
                 ) : (
-                    <div className='flex flex-wrap justify-center  gap-5 mx-0 xl:mx-60 p-5 '>
+                    <div className='flex flex-wrap justify-center  gap-3 mx-0 xl:mx-60 p-5 '>
                         {
                             cuisinces.map((item) => (
                                 <Link to={`/recipe/${item.id}`} key={item.id} className='flex hover:-translate-y-1 hover:duration-300 hover:shadow-md rounded-xl delay-75  hover:bg-secondary hover:text-white'>

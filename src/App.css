@@ -1,3 +1,27 @@
 .tab.tab-active:not(.tab-disabled):not([disabled]) {
   border-color: #ff7300 !important;
 }
+
+
+
+
+@media (hover:hover) {
+
+  .menu li>*:not(ul):not(.menu-title):not(details):active,
+  .menu li>*:not(ul):not(.menu-title):not(details).active,
+  .menu li>details>summary:active {
+    --tw-bg-opacity: 1;
+    background-color: #ff7300 !important;
+    --tw-text-opacity: 1;
+    color: hsl(var(--nc) / var(--tw-text-opacity));
+  }
+}
+
+.menu li>*:not(ul):not(.menu-title):not(details):active,
+.menu li>*:not(ul):not(.menu-title):not(details).active,
+.menu li>details>summary:active {
+  --tw-bg-opacity: 1;
+  background-color: #ff7300 !important;
+  --tw-text-opacity: 1;
+  color: hsl(var(--nc) / var(--tw-text-opacity));
+}
