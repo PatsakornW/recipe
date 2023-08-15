@@ -63,7 +63,7 @@ function All_recipe() {
                         </div>
                     </div>
                 ) : (
-                    <div className='flex flex-wrap justify-center  gap-5 mx-0 xl:mx-60 p-5 '>
+                    <div className='flex flex-wrap justify-center  gap-5 mx-0 xl:mx-60 p-3 '>
                         {
                             allRecipe.map((item) => (
                                 <Link to={`/recipe/${item.id}`} key={item.id} className='flex hover:-translate-y-2 hover:duration-500 hover:shadow-md rounded-xl delay-75 '>

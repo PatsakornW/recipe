@@ -142,7 +142,7 @@ function Recipe() {
 
                     {/* grid 2 */}
                     <div className='flex-col   flex  items-center   overflow-hidden m-5'>
-                        <img className='order-2 xl:order-1 w-full   rounded-2xl shadow-lg' src={detail.image} alt={detail.title} />
+                        <img className='order-2 xl:order-1 w-full my-4  rounded-2xl shadow-lg' src={detail.image} alt={detail.title} />
                         <div className="order-1 lg:order-2 grid grid-cols-2 md:grid-cols-4 gap-3 mt-5 m-3">
 
                             <div className=" grid grid-rows-2 grid-flow-col gap-x-2 border-2  rounded-xl items-center p-2 bg-base">
