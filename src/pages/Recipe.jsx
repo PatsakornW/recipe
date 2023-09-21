@@ -7,6 +7,7 @@ import fat from "../assets/trans-fats-free.png";
 import carbs from "../assets/carb.png";
 import '../App.css'
 import { motion } from 'framer-motion';
+import Error from '../components/error';
 
 
 
@@ -20,36 +21,24 @@ function Recipe() {
     const { id } = useParams();
     const [error, setError] = useState(null);
 
-    // console.log(id);
-
     useEffect(() => {
-        // console.log(detail);
+
         getDetail();
-
     }, [id])
-
-
 
 
     function getDetail() {
         const check = localStorage.getItem('detail_recipes');
         const checkNutri = localStorage.getItem('detail_nutri');
 
-
-
         if (check && checkNutri) {
             setdetail(JSON.parse(check))
             setNutrition(JSON.parse(checkNutri))
-
-
-
-
         } else {
             axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${import.meta.env.VITE_API_KEY_RECIPE}`)
                 .then(function (response) {
                     localStorage.setItem('detail_recipes', JSON.stringify(response.data));
                     setdetail(response.data);
-                    // console.log('Response data:', response.data);
                 })
                 .catch(function (error) {
                     setError(error);
@@ -73,10 +62,7 @@ function Recipe() {
     return (
         <div >
             {error ? (<div className='flex  justify-center p-5 '>
-                <div className="alert alert-error w-80">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    <span className='break-all'>{error.message}</span>
-                </div>
+            <Error error={error}/>
             </div>) : (
                 <motion.div className="lg:w-full xl:w-4/5  m-auto cursor-default grid grid-rows-1 grid-cols-1 lg:grid-cols-2 mt-5 lg:mt-14"
                     initial={{ opacity: 0 }}
@@ -178,8 +164,6 @@ function Recipe() {
                 </motion.div>
             )}
         </div>
-
-
 
     )
 }
